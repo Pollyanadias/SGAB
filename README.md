@@ -37,13 +37,13 @@ O Sistema de Gerenciamento de Acervo Bibliotecário (SGAB) é um software que te
       <a href="https://github.com/CaraChaato">
         <img src="https://avatars.githubusercontent.com/u/110605121?v=4" width="100px;" alt="Foto de Pedro Vinícius no GitHub"/><br>
         <sub>
-          <b>Pedro Vinícius</b>
+          <b>David Negreiros</b>
         </sub>
       </a>
     </td>
     <td align="center">
-      <a href="https://github.com/Pollyanadias">
-        <img src="https://avatars.githubusercontent.com/u/110605099?v=4" width="100px;" alt="Foto de Pollyana Dias no GitHub"/><br>
+      <a href="https://github.com/Davidnegreiros">
+        <img src="https://avatars.githubusercontent.com/u/100435970?v=4" width="100px;" alt="Foto de Pollyana Dias no GitHub"/><br>
         <sub>
           <b>Pollyana Dias</b>
         </sub>
