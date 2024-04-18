@@ -1,10 +1,12 @@
 import java.io.IOException;
-//import java.time.LocalDate;
-//import java.time.format.DateTimeFormatter;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 public class MainProjeto {
+
+    private static Usuario usuario;
 
     public static void main(String[] args) throws InterruptedException, IOException {
         Scanner sc = new Scanner(System.in);
@@ -1044,6 +1046,7 @@ public class MainProjeto {
                 System.out.println(" 3 -> Listar");
                 System.out.println(" 4 -> Editar");
                 System.out.println(" 5 -> Excluir");
+                System.out.println(" 6 -> Realizar Emprestimos");
                 System.out.println(" 0 -> Voltar");
                 System.out.print(" > ");
 
@@ -1266,6 +1269,49 @@ public class MainProjeto {
                         System.out.print("\n Aperte Enter para Continuar");
                         sc.nextLine();
                         break;
+                    case 6: // realizarEmprestimo
+                        LimpaTela();
+                        System.out.println(" < Realizar Emprestimo >");
+                        System.out.print(" id do Livro: ");
+                        idLivro = Integer.valueOf(sc.nextLine());
+                        if (Livro.buscaLivroId(idLivro) != null) {
+                            Livro livru = Livro.buscaLivroId(idLivro);
+                            System.out.println(livru.toString());
+                            System.out.print(" Continuar (1 -> Sim, 2 -> Não): ");
+                            if (Integer.valueOf(sc.nextLine()) == 1) {
+
+                                System.out.println("\n < Credenciais do Aluno >");
+                                System.out.print(" Email: ");
+                                String email = sc.nextLine();
+                                System.out.print(" CPF: ");
+                                String cpf = sc.nextLine();
+                                if (Adm.loginUsuario(email, cpf) != null) {
+
+                                    LocalDate dataAtual = LocalDate.now();
+                                    DateTimeFormatter formato = DateTimeFormatter.ofPattern("dd/MM/yyyy");
+                                    String dataEmprestimo = dataAtual.format(formato);
+                                    LocalDate dataprev = dataAtual.plusDays(7);
+                                    String dataPrevista = dataprev.format(formato);
+
+                                    Emprestimo emprestimo = new Emprestimo(
+                                            usuario.getCpf(),
+                                            idLivro,
+                                            dataEmprestimo,
+                                            dataPrevista,
+                                            null);
+                                    emprestimo.criarEmprestimo();
+
+                                } else {
+                                    System.out.println(" Empréstimo Cancelado por Invalidação!");
+                                }
+                            } else {
+                                System.out.println(" Livro Não Encontrado!");
+                            }
+                            System.out.print(" Aperte Enter para Continuar! ");
+                            sc.nextLine();
+                        }
+                        break;
+                        
                     case 0:
                         sair = true;
                         break;
