@@ -1,6 +1,6 @@
 import java.io.IOException;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
+//import java.time.LocalDate;
+//import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -16,8 +16,14 @@ public class MainProjeto {
                     case 1: // Usuário
                         MenuLogin(sc);
                         break;
-                    case 2: // Cliente
+                    /*case 2: // Cliente
                         MenuCadastro(sc);
+                        break;*/
+                    case 2:
+                        BuscarLivro(sc);
+                        break;
+                    case 3:
+                        ListarLivros(sc);
                         break;
                     case 0: // Sair
                         sair = true;
@@ -36,7 +42,9 @@ public class MainProjeto {
         LimpaTela();
         System.out.println(" ===  Menu Principal  ===");
         System.out.println(" 1 -> Login");
-        System.out.println(" 2 -> Registrar-se");
+        //System.out.println(" 2 -> Registrar-se");
+        System.out.println(" 2 -> Buscar Livro");
+        System.out.println(" 3 -> Listar Livros");
         System.out.println(" 0 -> Sair");
         System.out.print(" >> ");
         return sc.nextLine();
@@ -50,6 +58,47 @@ public class MainProjeto {
      * @throws InterruptedException
      * @throws IOException
      */
+
+    /*public static Livro BuscarLivro(Scanner sc) throws InterruptedException, IOException { 
+        LimpaTela();
+        System.out.printf("-> Informe o ID do Livro: ");
+        int livroId = sc.nextInt();
+        return Livro.buscaLivroId(livroId);
+    }*/
+
+    public static void BuscarLivro(Scanner sc) throws InterruptedException, IOException {
+        ArrayList<Livro> listaLivro = new ArrayList<>();
+        LimpaTela();
+        System.out.println(" < Pesquisar Livros > ");
+        System.out.print(" > ");
+        listaLivro = Livro.pesquisarLivro(sc.nextLine());
+        if (listaLivro.size() != 0) {
+            for (int i = 0; i < listaLivro.size(); i++) {
+                System.out.println(listaLivro.get(i).toString() + "\n");
+            }
+        }
+        else{
+            System.out.println(" Livro não Encontrado! ");
+
+            System.out.print("\n Aperte Enter para Continuar! ");
+            sc.nextLine();
+        }
+    }
+
+     public static void ListarLivros(Scanner sc) throws InterruptedException, IOException {
+        System.out.println(" < Listando Acervo >");
+        ArrayList<Livro> ListaLivro = Livro.listarLivros();
+        if (ListaLivro != null && ListaLivro.size() > 0) {
+            for (int i = 0; i < ListaLivro.size(); i++) {
+                System.out.println(ListaLivro.get(i).toString() + "\n");
+            }
+        } else
+            System.out.println("\n Nenhum livro encontrado! ");
+        System.out.print("\n Aperte Enter para Continuar! ");
+        sc.nextLine();
+        
+    }
+    
     public static void MenuLogin(Scanner sc) throws InterruptedException, IOException {
         int out = 3;
         boolean sair = false;
@@ -73,9 +122,10 @@ public class MainProjeto {
                         if (Usuario.loginUsuario(email, senha) != null) {
                             if (Adm.loginAdm(email, senha) != null) {
                                 menuAdmin(Adm.loginAdm(email, senha), sc);
-                            } else {
-                                menuUsuario(Usuario.loginUsuario(email, senha), sc);
                             }
+                            /*else {
+                                menuUsuario(Usuario.loginUsuario(email, senha), sc);
+                            }*/
                         } else {
                             LimpaTela();
                             System.out.println(" Email ou Senha incorretos! ");
@@ -108,7 +158,7 @@ public class MainProjeto {
      * @throws InterruptedException
      * @throws IOException
      */
-    public static void MenuCadastro(Scanner sc) throws InterruptedException, IOException {
+    /*public static void MenuCadastro(Scanner sc) throws InterruptedException, IOException {
         boolean sair = false;
         do {
             try {
@@ -177,7 +227,7 @@ public class MainProjeto {
             }
 
         } while (!sair);
-    }
+    }*/
 
     /**
      * Menu de Usuário, para onde você vem depois de logar, aqui você pode
@@ -189,7 +239,7 @@ public class MainProjeto {
      * @throws InterruptedException
      * @throws IOException
      */
-    public static void menuUsuario(Usuario usuario, Scanner sc) throws InterruptedException, IOException {
+    /*public static void menuUsuario(Usuario usuario, Scanner sc) throws InterruptedException, IOException {
         boolean sair = false;
         int idLivro;
         do {
@@ -288,7 +338,7 @@ public class MainProjeto {
             } catch (NumberFormatException e) {
             }
         } while (!sair);
-    }
+    }*/
 
     /**
      * O menu do Administrador, que dispõe de opções para vizualizar e editar seu
@@ -455,12 +505,12 @@ public class MainProjeto {
                 LimpaTela();
                 System.out.println(" < Meu Perfil >");
                 System.out.println(usuario.mostrarPerfil());
-                System.out.println("\n 1 -> Editar Perfil");
-                System.out.println(" 2 -> Excluir Conta");
+                //System.out.println("\n 1 -> Editar Perfil");
+                System.out.println(" 1 -> Excluir Conta");
                 System.out.println(" 0 -> Sair");
                 System.out.print(" > ");
                 switch (Integer.valueOf(sc.nextLine())) {
-                    case 1:
+                    /*case 1:
                         LimpaTela();
                         System.out.println(" Qual dado quer editar?");
                         System.out.println(" 1 -> Nome");
@@ -512,8 +562,8 @@ public class MainProjeto {
                                 sc.nextLine();
                                 break;
                         }
-                        break;
-                    case 2:
+                        break;*/
+                    case 1:
                         LimpaTela();
                         System.out.println(" < Excluir Conta >");
                         System.out.println(" 1 -> Excluir ");
