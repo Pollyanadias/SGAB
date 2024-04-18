@@ -1,7 +1,7 @@
 <h1 align="center">SISTEMA DE GERENCIAMENTO DE ACERVO BIBLIOTECÁRIO (SGAB)</h1>
 
 
-## **Descrição**
+## **✏️ Descrição**
 O Sistema de Gerenciamento de Acervo Bibliotecário (SGAB) é um software que tem por objetivo organizar e gerenciar acervos bibliotecários, sendo responsável pelo gerenciamento dos volumes e de usuários deste acervo. Ele se dispõe a ser uma feramenta de fácil utilização mesmo para usuários com pouca ou nenhuma familiaridade com softwares. 
 
 
