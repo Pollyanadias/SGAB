@@ -18,9 +18,12 @@ O Sistema de Gerenciamento de Acervo Bibliotecário (SGAB) é um software que te
     Aqui!
   </a>
 </table>
-
-## Apresentação do Projeto
-![Diagrama de Classes](https://raw.githubusercontent.com/CaraChaato/SGAB/main/Arquivos/Diagrama%20de%20Classes%20-%20SGAB.png)
+<table>
+  Apresentação do Projeto: 
+  <a href="https://www.canva.com/design/DAGCaqQkhXA/z4aQV04WzUhxd9bxdjC6fA/edit?utm_content=DAGCaqQkhXA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton">
+    Aqui!
+  </a>
+</table>
 
 ## :handshake: Colaboradores
 <table align="center">
