@@ -41,7 +41,7 @@ public class MainProjeto {
     }
 
     public static String MenuPrincipal(Scanner sc) throws InterruptedException, IOException {
-        LimpaTela();
+        //LimpaTela();
         System.out.println(" ===  Menu Principal  ===");
         System.out.println(" 1 -> Login");
         //System.out.println(" 2 -> Registrar-se");
